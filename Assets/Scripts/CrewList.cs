@@ -16,8 +16,4 @@ public class CrewList : MonoBehaviour
     {
         
     }
-    public CrewList(string crew)
-    {
-        CrewListText.text = crew;
-    }
 }

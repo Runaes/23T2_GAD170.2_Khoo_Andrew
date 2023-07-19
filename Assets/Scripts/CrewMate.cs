@@ -29,7 +29,7 @@ public class CrewMate : MonoBehaviour
             crewMateHobby.text = ParasiteHobbies[Random.Range(0, ParasiteHobbies.Length - 1)];
         }
         else
-        {
+        { 
             crewMateHobby.text = ViableHobbies[Random.Range(0, ViableHobbies.Length - 1)];
         }
     }
