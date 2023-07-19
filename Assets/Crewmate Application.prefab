@@ -357,6 +357,7 @@ GameObject:
   - component: {fileID: 4865748151525872467}
   - component: {fileID: 8353650468359508373}
   - component: {fileID: 2290273253763718082}
+  - component: {fileID: 7549289846533565430}
   m_Layer: 0
   m_Name: Name
   m_TagString: Untagged
@@ -481,6 +482,23 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7549289846533565430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5293987133814012589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9702bb436f301fe498b2bcfe579fd11c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isParasite: 0
+  crewMateName: {fileID: 0}
+  crewMateHobby: {fileID: 0}
+  Accept: {fileID: 0}
+  Reject: {fileID: 0}
 --- !u!1 &5677908933147805757
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,8 +745,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 172.05301, y: 23.731047}
-  m_SizeDelta: {x: 164.272, y: 63.396}
+  m_AnchoredPosition: {x: 180.5339, y: -15.295}
+  m_SizeDelta: {x: 181.238, y: 141.448}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2323793591725206070
 CanvasRenderer:
@@ -801,7 +819,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -894,7 +912,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &6329296853014329021
 MonoBehaviour:
@@ -1459,6 +1477,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6329296854160889465}
+  - component: {fileID: 2909473380601315495}
   m_Layer: 0
   m_Name: Crewmate Application
   m_TagString: Untagged
@@ -1482,3 +1501,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2909473380601315495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6329296854160889462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9702bb436f301fe498b2bcfe579fd11c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isParasite: 0
+  crewMateName: {fileID: 2290273253763718082}
+  crewMateHobby: {fileID: 4948505544219792430}
+  Accept: {fileID: 6329296853453812810}
+  Reject: {fileID: 6329296853480623446}
