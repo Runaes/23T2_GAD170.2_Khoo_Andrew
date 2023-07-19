@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,6 +14,7 @@ public class Ship : MonoBehaviour
     public Button CrewList;
     public GameObject CrewMatePrefab;
     public GameObject CrewListPrefab;
+    public GameObject Victory;
     public TMP_Text CrewCount;
     // Start is called before the first frame update
     void Start()
@@ -54,6 +56,11 @@ $@"You have won!
 Your winning crew is:
 {GetCrewList}";
             // play victory fanfare
+
+            var prefab = Instantiate(Victory);
+            var victory = prefab.GetComponent<Victory>();
+            victory.Text.text = victoryList;
+            Destroy(this.transform.parent);
         }
 
         CrewCount.text = Crew.Count.ToString();
@@ -69,7 +76,7 @@ Your winning crew is:
             // instantiate a clone so we don't null ref on destroyed prefabs
             AddCrewMate(crewMate.CloneViaFakeSerialization());
             // we don't want them spamming this if there's one made
-            HireNew.enabled = false;
+            canHireNew = false;
         });
         crewMate.Accept.onClick.AddListener(() => DestroyCrew(prefab));
         crewMate.Reject.onClick.AddListener(() => DestroyCrew(prefab));
@@ -79,7 +86,7 @@ Your winning crew is:
     {
         Destroy(prefab);
         KillCrewList();
-        HireNew.enabled = true;
+        canHireNew = true;
     }
 
     void KillCrewList()
