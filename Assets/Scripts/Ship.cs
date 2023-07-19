@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
-using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Ship : MonoBehaviour
 {
     public Button HireNew;
-    bool canHireNew;
     public Button CrewList;
     public GameObject CrewMatePrefab;
     public GameObject CrewListPrefab;
@@ -68,6 +66,8 @@ Your winning crew is:
 
     void CreateCrewPrefab()
     {
+        // we don't want them spamming this if there's one made
+        HireNew.enabled = false;
         var prefab = Instantiate(CrewMatePrefab);
         var crewMate = prefab.GetComponent<CrewMate>();
         crewMate.isParasite = Random.Range(0, 100) > 70;
@@ -75,8 +75,8 @@ Your winning crew is:
         {
             // instantiate a clone so we don't null ref on destroyed prefabs
             AddCrewMate(crewMate.CloneViaFakeSerialization());
-            // we don't want them spamming this if there's one made
-            canHireNew = false;
+            HireNew.enabled = true;
+
         });
         crewMate.Accept.onClick.AddListener(() => DestroyCrew(prefab));
         crewMate.Reject.onClick.AddListener(() => DestroyCrew(prefab));
@@ -86,7 +86,7 @@ Your winning crew is:
     {
         Destroy(prefab);
         KillCrewList();
-        canHireNew = true;
+        HireNew.enabled = true;
     }
 
     void KillCrewList()

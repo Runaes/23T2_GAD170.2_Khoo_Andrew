@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class CrewMate : MonoBehaviour
 {
     string[] ViableHobbies = new[] { "Soccer", "Rugby", "Swimming", "Rock Climbing", "Tennis", "Volleyball", "Video Games", "Sky Diving" };
-    string[] ParasiteHobbies = new[] { "Kickball", "Aggressive Group Hug Zone Control", "Water Traversal", "Scaling of Rock Faces", "Hitting Balls with Sticks", "Slapping Balls", "Computational Games", "Falling Out of Flying Machines" };
+    string[] ParasiteHobbies = new[] { "Kickball", "Aggressive Group Hug Zone Control", "Water Traversal", "Scaling of Rock Faces", "Hitting Ball With Hand Held Object", "Hitting Ball With Hands", "Computational Visual Entrertainment", "Falling Out Of Flying Vehicle" };
     string[] Names = new[] { "Andrew", "Brian", "Carmen", "Derrick", "Elisa", "Fred", "George", "Hailey", "Ilya", "Karren", "Liam", "Noelene", "Oscar", "Peter", "Quinton", "Raphael", "Stephen", "Timothy", "Ursula", "Viktor", "Wilfred", "Xavier", "Yukio", "Zimba'qwer!Tulu" };
 
     [SerializeField]
