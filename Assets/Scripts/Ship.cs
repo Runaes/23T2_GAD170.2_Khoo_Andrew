@@ -14,6 +14,7 @@ public class Ship : MonoBehaviour
     public GameObject CrewListPrefab;
     public GameObject Victory;
     public TMP_Text CrewCount;
+    public AudioSource death;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +36,10 @@ public class Ship : MonoBehaviour
         if (crewMate.isParasite)
         {
             //play amongus wav.
+            if (Crew.Count > 0)
+            {
+                death.Play();
+            }
             if (Crew.Count > 0)
             {
                 var hobbyToKill = Crew.ToArray()[Random.Range(0, Crew.Count - 1)].crewMateHobby.text;
@@ -71,15 +76,15 @@ Your winning crew is:
         var prefab = Instantiate(CrewMatePrefab);
         var crewMate = prefab.GetComponent<CrewMate>();
         crewMate.isParasite = Random.Range(0, 100) > 70;
-        crewMate.Accept.onClick.AddListener(() =>
+        crewMate.accept.onClick.AddListener(() =>
         {
             // instantiate a clone so we don't null ref on destroyed prefabs
             AddCrewMate(crewMate.CloneViaFakeSerialization());
             HireNew.enabled = true;
 
         });
-        crewMate.Accept.onClick.AddListener(() => DestroyCrew(prefab));
-        crewMate.Reject.onClick.AddListener(() => DestroyCrew(prefab));
+        crewMate.accept.onClick.AddListener(() => DestroyCrew(prefab));
+        crewMate.reject.onClick.AddListener(() => DestroyCrew(prefab));
     }
     
     void DestroyCrew(GameObject prefab)

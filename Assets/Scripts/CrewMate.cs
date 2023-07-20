@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,12 +18,22 @@ public class CrewMate : MonoBehaviour
     public TMP_Text crewMateName;
     [SerializeField]
     public TMP_Text crewMateHobby;
-    public Button Accept;
-    public Button Reject;
+    public Button accept;
+    public Button reject;
+    public Image picture;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        // i'm aware of the spelling mistake, i'm just too lazy to fixe it for every item now.
+        var path = $"Assets/portaits/portait ({Random.Range(1,8)}).jpg";
+        var bytes = File.ReadAllBytes(path);
+        var profile = new Texture2D(1,1);
+
+        profile.LoadImage(bytes);
+        picture.sprite = Sprite.Create(profile, new Rect(0, 0, profile.width, profile.height), new Vector2(0.5f, 0.5f));
+
         crewMateName.text = Names[Random.Range(0, Names.Length - 1)];
         if (isParasite)
         {

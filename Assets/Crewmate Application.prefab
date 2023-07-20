@@ -59,14 +59,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.542537, g: 0.8867924, b: 0.2732882, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: fd56c4f5ba71fdf40a2bef235244cf8f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -357,7 +357,6 @@ GameObject:
   - component: {fileID: 4865748151525872467}
   - component: {fileID: 8353650468359508373}
   - component: {fileID: 2290273253763718082}
-  - component: {fileID: 7549289846533565430}
   m_Layer: 0
   m_Name: Name
   m_TagString: Untagged
@@ -482,23 +481,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &7549289846533565430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5293987133814012589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9702bb436f301fe498b2bcfe579fd11c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isParasite: 0
-  crewMateName: {fileID: 0}
-  crewMateHobby: {fileID: 0}
-  Accept: {fileID: 0}
-  Reject: {fileID: 0}
 --- !u!1 &5677908933147805757
 GameObject:
   m_ObjectHideFlags: 0
@@ -930,7 +912,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -1516,5 +1498,6 @@ MonoBehaviour:
   isParasite: 0
   crewMateName: {fileID: 2290273253763718082}
   crewMateHobby: {fileID: 4948505544219792430}
-  Accept: {fileID: 6329296853453812810}
-  Reject: {fileID: 6329296853480623446}
+  accept: {fileID: 6329296853453812810}
+  reject: {fileID: 6329296853480623446}
+  picture: {fileID: 1700512459486778354}
