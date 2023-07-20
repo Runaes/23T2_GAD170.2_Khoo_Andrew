@@ -38,13 +38,10 @@ public class Ship : MonoBehaviour
             //play amongus wav.
             if (Crew.Count > 0)
             {
-                death.Play();
-            }
-            if (Crew.Count > 0)
-            {
                 var hobbyToKill = Crew.ToArray()[Random.Range(0, Crew.Count - 1)].crewMateHobby.text;
                 Crew = Crew.Where(c => c.crewMateHobby.text != hobbyToKill).ToList();
                 // play murder sound
+                death.Play();
             }
         }
         else
@@ -80,7 +77,6 @@ Your winning crew is:
         {
             // instantiate a clone so we don't null ref on destroyed prefabs
             AddCrewMate(crewMate.CloneViaFakeSerialization());
-            HireNew.enabled = true;
 
         });
         crewMate.accept.onClick.AddListener(() => DestroyCrew(prefab));
